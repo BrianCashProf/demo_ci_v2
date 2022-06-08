@@ -14,7 +14,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_subtracting(self):
         ans = demo.lambda_handler2(1,1)
-        self.assertEqual(2, ans)  # add assertion here
+        self.assertEqual(0, ans)  # add assertion here
 
 
 if __name__ == '__main__':
