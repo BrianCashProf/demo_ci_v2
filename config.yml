@@ -1,0 +1,23 @@
+version: 2.1
+
+# Define the jobs we want to run for this project
+jobs:
+  build:
+    docker:
+      - image: cimg/python:3.8
+  test:
+    docker:
+      - image: cimg/python:3.8
+    # Run Unittest Python script
+    steps:
+      - checkout
+      - run: python -m test_demo.py
+
+# Orchestrate our job run sequence
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
