@@ -7,7 +7,6 @@ However, it is only an adding method.
 
 def lambda_handler(event, context):
     ans = event + context
-    ans = event + context
     return ans
 
 def lambda_handler2(event, context):
