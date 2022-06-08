@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "Demo Test"
-          command: python -m test_demo.py
+          command: python -m unittest test_demo.py
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
