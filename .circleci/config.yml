@@ -1,23 +1,26 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-# Define the jobs we want to run for this project
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  build:
+  demo-test:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: cimg/python:3.8
-  test:
-    docker:
-      - image: cimg/python:3.8
-    # Run Unittest Python script
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - run: python -m test_demo.py
+      - run:
+          name: "Demo Test"
+          command: python -m unittest test_demo.py
 
-# Orchestrate our job run sequence
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  build_and_test:
+  demo-test-workflow:
     jobs:
-      - build
-      - test:
-          requires:
-            - build
+      - demo-test
