@@ -15,4 +15,5 @@ def subtraction(x, y):
 
 def lambda_handler(event, context):
     ans = event['body']
+    ans = event['body']
     return ans

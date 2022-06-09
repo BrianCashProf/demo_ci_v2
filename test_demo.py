@@ -28,7 +28,7 @@ class MyTestCase(unittest.TestCase):
         f.close()
         ans = demo.lambda_handler(test,None)
         ex_ans= {
-                "answer 2": "This is the body"
+                "answer 1": "This is the body"
             }
         self.assertEqual(ex_ans, ans)  # add assertion here
 
