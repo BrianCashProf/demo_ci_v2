@@ -6,7 +6,7 @@ However, it is only an adding method.
 
 # This one adds
 def addition(x, y):
-    ans = sum(x,y)
+    ans = x+y
     return ans
 #
 def subtraction(x, y):
