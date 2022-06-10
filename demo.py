@@ -6,14 +6,13 @@ However, it is only an adding method.
 
 # This one adds
 def addition(x, y):
-    ans = x + y + 42
+    ans = sum(x,y)
     return ans
 #
 def subtraction(x, y):
     ans = x - y
-    ans = x - y
     return ans
 
 def lambda_handler(event, context):
-    ans = event['header']
+    ans = event['body']
     return ans
